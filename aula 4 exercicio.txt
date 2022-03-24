@@ -1,0 +1,2 @@
+Faça um algoritmo com um vetor com 8 numeros inteiros.
+Exiba a soma de todos os números e também quantidade de números pares e ímpares?

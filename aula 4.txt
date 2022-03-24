@@ -1,0 +1,24 @@
+inteiro idade[5] ,maioridade=0, menoridade=0
+
+		para(inteiro i=0; i <= 4; i++){
+			escreva("Ditite a idade:")
+			leia (idade[i])
+		}
+		para(inteiro i=0; i <=4; i++){
+			
+			se(i==0){
+				maioridade=idade[i]
+				menoridade=idade[i]
+		}
+			senao se(idade[i]>maioridade){
+				maioridade=idade[i]
+			}
+			 se(idade[i]<menoridade){
+				menoridade=idade[i]
+			}
+		}
+
+		escreva("Maior idade é:"+maioridade+ "\n" )
+		escreva("Menor idade é:"+menoridade)
+	}
+}
