@@ -1,0 +1,52 @@
+programa
+{
+	
+	funcao inicio()
+	{
+        inteiro cinema[12][10],filas,colunas,reservadas=0
+
+        para(inteiro c=0; c< 12; c++){
+        	para(inteiro f=0; f < 10; f++){
+        		cinema[c][f]=0
+        	    		
+        		
+          	}
+
+		}
+		faca{
+			escreva("0,1,2,3,4,5,6,7,8,9" ,"\n")
+			para(inteiro c=0; c < 12; c++){
+				para(inteiro f=0; f < 10; f++){
+					escreva(cinema[c][f]," ")
+	
+			}
+			escreva(c,"\n")
+	
+			}
+			
+			escreva("Informe o número do assento pretendido: ")
+			leia(colunas,filas)
+			se(colunas < 0 ou colunas > 12){
+				escreva("\ncoluna inválida.digite outro assento,\n")
+			}
+			senao{
+				se(filas < 0 ou filas > 10){
+					escreva("\n fila inválida.digite outro assento\n") 
+				}
+				senao{
+					se(cinema[colunas][filas]==1){
+						escreva("\nPoltrona já reservada.escolha outra \n")
+						
+					}
+					senao{
+						cinema[colunas][filas] = 1
+						escreva("\nReserva efetuada com sucesso!")
+						reservadas++
+					}
+				}
+			}
+		}enquanto(reservadas < 120 e filas >= 0 ou colunas >= 0)
+		
+	}
+}
+
