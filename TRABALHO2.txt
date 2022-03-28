@@ -1,0 +1,81 @@
+
+programa
+{
+	inteiro vagas[30]
+	funcao espere(){
+		cadeia _
+		escreva("\n\nPressione enter para continuar...")
+		leia(_)
+	}
+	funcao logico vagaOcupada(inteiro vaga){
+		se(vagas[vaga-1] == 1){
+			retorne verdadeiro
+		}senao{
+			retorne falso
+		}
+	}
+	funcao registrarEntrada(){
+		inteiro vaga
+		escreva("Digite o número da vaga para a qual você deseja registrar uma entrada.\n")
+		leia(vaga)
+		se(vagaOcupada(vaga)){
+			escreva(" Já existe um veículo estacionado nesta vaga.")
+		}senao{
+			vagas[vaga-1] = 1
+			escreva("vaga livre.")
+		}
+	}
+	funcao registrarSaida(){
+		inteiro vaga
+		escreva("Digite o número da vaga para a qual você deseja registrar uma saída.\n")
+		leia(vaga)
+		se(vagaOcupada(vaga)){
+			vagas[vaga-1] = 0
+			escreva("Registrada a saída .")
+		}senao{
+			escreva(" Não existe nenhum veículo estacionado nesta vaga...")
+		}
+	}
+	funcao listarVagas(){
+		escreva(" Dois pontos indicam área ocupada, enquanto números indicam vagas disponíveis.\n\n")
+		escreva(" ----------------------------------------------------------- \n")
+		para(inteiro i = 1; i<=30; i++){
+			se(vagaOcupada(i)){
+				escreva("|••")
+			}senao{
+				se(i<29){
+					escreva("|0"+i)
+				}senao{
+					escreva("|"+i)
+				}
+			}
+		}
+		escreva("|\n ----------------------------------------------------------- ")
+	}
+	funcao inicio()
+	{
+		inteiro opcao
+		logico continuar = verdadeiro
+		enquanto(continuar){
+			escreva("GERENCIADOR DE ESTACIONAMENTO\n\n")
+			escreva("Escolha uma opção\n")
+			escreva("1. Registrar entrada\t3. Listar registros\n2. Registrar Saída\t4. Fechar\n")
+			leia(opcao)
+			limpa()
+			escolha(opcao){
+				caso 1: 
+				registrarEntrada()
+				pare
+				caso 2:
+				registrarSaida()
+				pare
+				caso 3:
+				listarVagas()
+				pare
+				caso contrario:
+				continuar = falso
+			}
+			limpa()
+		}	
+	}
+}
